@@ -13,6 +13,21 @@ The main purpose of the kinematic model is mainly used to predict the state of t
 
 ![alt text](https://github.com/jonaschan/MPC-Controller/blob/master/eqns.png "Equation")
 
+## Udacity Implementation specification 2
+### Student discusses the reasoning behind the chosen N (timestep length) and dt (elapsed duration between timesteps) values. Additionally the student details the previous values tried.
+
+The model prediction is based on how many predicted timesteps. I first tried the following values 25 timesteps with time separation of 0.02 seconds, 25 timesteps ~ 0.05 seconds,  etc, of which i eventually settled on the 10 timesteps ~ 0.1 seconds. This was highly due to the capability of the machine I am currently running on which seemed enough to overcome the 0.1 seconds latency.
+
+## Udacity Implementation specification 3
+### A polynomial is fitted to waypoints. If the student preprocesses waypoints, the vehicle state, and/or actuators prior to the MPC procedure it is described.
+
+I used the method implemented by Jeremy Shannon in which he preprocesses the waypoints by transforming them to the vehicle's prespective such that the vehicle's coordinates and orientation is zero.
+
+## Udacity Implementation specification 3
+### The student implements Model Predictive Control that handles a 100 millisecond latency. Student provides details on how they deal with latency.
+
+The latency was handled by using the cost functions which were suggested in the lectures of which the parameters were turned using the try-and-error method to reach optimal speed of the vehicle whilst being able to handle corners. I also implemented additional costing to the vehicle's velocity and its delta into order to control the cornering even more.
+
 ## Dependencies
 
 * cmake >= 3.5
