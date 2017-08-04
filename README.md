@@ -2,6 +2,14 @@
 Self-Driving Car Engineer Nanodegree Program
 
 ---
+## Udacity Implementation specification 1
+### Student describes their model in detail. This includes the state, actuators and update equations.
+
+The model used for this project implements the Kinematic model as learned from the lectures. This model includes the vehicle's x and y coordinates, its orientation / heading, velocity, the cross track error as well as the psi error of which ultimately forms the state vector of the vehicle.
+
+The vehicle's actuator outputs include the steering angle and the acceleration of which the former is within the range of -25 degrees to 25 degrees whereas the latter is within the range of -1 to 1 where -1 represents the braking of the vehicle and 1 represents vehicle acceleration.
+
+The main purpose of the kinematic model is mainly used to predict the state of the next timestep by taking into consideration the current state and actuators. This can be represented by the formula below:
 
 ## Dependencies
 
