@@ -11,6 +11,8 @@ The vehicle's actuator outputs include the steering angle and the acceleration o
 
 The main purpose of the kinematic model is mainly used to predict the state of the next timestep by taking into consideration the current state and actuators. This can be represented by the formula below:
 
+![alt text](https://github.com/jonaschan/MPC-Controller/blob/master/eqns.png "Equation")
+
 ## Dependencies
 
 * cmake >= 3.5
