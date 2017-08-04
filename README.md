@@ -23,7 +23,7 @@ The model prediction is based on how many predicted timesteps. I first tried the
 
 I used the method implemented by Jeremy Shannon in which he preprocesses the waypoints by transforming them to the vehicle's prespective such that the vehicle's coordinates and orientation is zero.
 
-## Udacity Implementation specification 3
+## Udacity Implementation specification 4
 ### The student implements Model Predictive Control that handles a 100 millisecond latency. Student provides details on how they deal with latency.
 
 The latency was handled by using the cost functions which were suggested in the lectures of which the parameters were turned using the try-and-error method to reach optimal speed of the vehicle whilst being able to handle corners. I also implemented additional costing to the vehicle's velocity and its delta into order to control the cornering even more.
