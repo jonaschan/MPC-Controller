@@ -26,7 +26,18 @@ I used the method implemented by Jeremy Shannon in which he preprocesses the way
 ## Udacity Implementation specification 4
 ### The student implements Model Predictive Control that handles a 100 millisecond latency. Student provides details on how they deal with latency.
 
-The latency was handled by using the cost functions which were suggested in the lectures of which the parameters were turned using the try-and-error method to reach optimal speed of the vehicle whilst being able to handle corners. I also implemented additional costing to the vehicle's velocity and its delta into order to control the cornering even more.
+**Updated this section**
+The lateny is handled using two methods; limiting the speed as well as to apply the actuations to the vehicle another timestep later using the following lines of code in the MPC script:
+     
+     if (t > 1) 
+      {
+        a = vars[a_start + t - 2];
+        delta = vars[delta_start + t - 2];
+      }
+
+The way this line works is by applying the actuations in the next timestep which is 100ms later in order to account for the latency.
+
+In addition to that, the latency was also handled by using the cost functions which were suggested in the lectures of which the parameters were turned using the try-and-error method to reach optimal speed of the vehicle whilst being able to handle corners. I also implemented additional costing to the vehicle's velocity and its delta into order to control the cornering even more.
 
 ## Dependencies
 
